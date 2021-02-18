@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Risque&display=swap');
+
+body {
+  /* font: 14px "Century Gothic", Futura, sans-serif; */
+  font-family: 'Risque', cursive;
+  font-size: 20px;
+  background-color: #ddd;
+  
+  background-color: #66426d;
+}
+
+#root {
+	height: 100vh;
+	min-height: 500px;
+	position: relative;
+}
+
+.wrap-game {
+	padding: 20px;
+}
+.settings-game {
+	width: 200px;
+	position: fixed;
+	right: -20px;
+	bottom: 50px;
+}
+
+.settings-game button {
+	display: block;
+	float: right;
+	width: 140px;
+	margin-bottom: 5px;
+	padding: 5px;
+	border-radius: 10px;
+	outline: none;
+	border: 2px solid #fcba00;
+	transition: margin-right .3s;
+	cursor: pointer;
+}
+.settings-game button:hover {
+	margin-right: 10px;	
+}
+.header-game {
+	width: 200px;
+	margin: auto;
+	padding: 10px;
+	border: 3px solid #FFF;
+	border-bottom: none;
+	border-right: none;
+	border-radius: 20px;
+}
+
+.header-game h1{
+	margin: 0;
+	padding-top: 76px;
+	padding-left: 96px;
+	background: url(assets/img/logo.jpg) no-repeat left top;
+	background-size: 100px;
+	font-size: 24px;
+	letter-spacing: 3px;
+	color: #fcba00;
+}
+
+.game-board {
+	padding-top: 50px;
+}
+.game-board > div {
+	width: 100px;
+	margin: auto;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+/* .game { */
+  /* display: flex; */
+  /* flex-direction: row; */
+/* } */
+
+.game-info {
+  margin-left: 20px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 20px;
+	color: #fcba00;
+}
+
+/* <a href='https://ru.freepik.com/vectors/background'>Background вектор создан(а) rawpixel.com - ru.freepik.com</a> */
+/* <a href='https://ru.freepik.com/vectors/baby'>Baby вектор создан(а) babysofja - ru.freepik.com</a> */
