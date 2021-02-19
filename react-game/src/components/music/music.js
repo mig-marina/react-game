@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import item from './assets/sound/music.mp3'
+import item from '../../assets/sound/music.mp3'
 
 export class Music extends React.Component {
 	constructor(props) {
@@ -13,7 +13,7 @@ export class Music extends React.Component {
 
 		this.url = item;
 		this.audio = new Audio(this.url);
-		this.audio.volume = 0.1;
+		this.audio.volume = 0.4;
 		this.more = this.more.bind(this);
 		this.litle = this.litle.bind(this);
 	}
@@ -48,11 +48,11 @@ export class Music extends React.Component {
   render() {
 
   return (
-    <div>
+    <div className="wrap-music">
       <button onClick={this.play}>Play</button>
       <button onClick={this.pause}>Pause</button>
-	  <button onClick={this.more}>+</button>
-	  <button onClick={this.litle}>-</button>
+	  	<button onClick={this.more}>+</button>
+	  	<button onClick={this.litle}>-</button>
     </div>
     );
   }
