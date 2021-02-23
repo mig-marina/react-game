@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { ButtonIcon } from '../button-icon/button-icon.js';
+
 // SETTINGS BUTTONS
 class ItemSettings extends React.Component {
 	render() {
@@ -13,19 +15,32 @@ class ItemSettings extends React.Component {
 }
 
 export class ListSettings extends React.Component {
+	constructor(props) {
+	 super(props);
+
+	 this.showModal = this.showModal.bind(this);
+ }
+
 	renderSettings(i) {
 		return <ItemSettings value = {i} />;
   }
+
+	showModal() {
+		const modal = document.querySelector('.wrap-modal');
+		modal.classList.add('show');
+		document.body.style.overflow = "hidden";
+	}
+
   render() {
 	const sett='Settings Game';
 
 	return(
 		<div className='settings-game'>
-			{this.renderSettings('about')}
-			{this.renderSettings('settings')}
-			{this.renderSettings('sound')}
-			{this.renderSettings('autoplay')}
-			{this.renderSettings('statistics')}
+			<button onClick={this.showModal}><ButtonIcon icon='&#0092;' title='rules' /></button>
+			<button><ButtonIcon icon='&#094;' title='settings' /></button>
+			<button><ButtonIcon icon='&#0121;' title='sound' /></button>
+			<button><ButtonIcon icon='&#243;' title='autoplay' /></button>
+			<button><ButtonIcon icon='&#0113;' title='statistics' /></button>
 		</div>
 	);
   }

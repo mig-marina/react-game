@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Risque&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
+@font-face{
+	font-family: 'WebSymbolsRegular';
+	src: url('../assets/fonts/websymbolsligaregular.eot');
+          src: url('../assets/fonts/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
+               url('../assets/fonts/websymbolsligaregular.woff') format('woff'),
+               url('../assets/fonts/websymbolsligaregular.ttf') format('truetype'),
+               url('../assets/fonts/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+}
 
 body {
-  /* font: 14px "Century Gothic", Futura, sans-serif; */
   font-family: 'Risque', cursive;
   font-size: 20px;
-  background-color: #ddd;
-
   background-color: #66426d;
+}
+
+.black {
+	background-color: #272727;
 }
 
 #root {
@@ -15,31 +28,43 @@ body {
 	position: relative;
 }
 
+.icon {
+  font-family: WebSymbolsRegular;
+}
+
 .wrap-game {
 	padding: 20px;
 }
+
 .settings-game {
-	width: 200px;
+  width: 70px;
 	position: fixed;
 	right: -20px;
 	bottom: 50px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .settings-game button {
 	display: block;
-	float: right;
-	width: 140px;
 	margin-bottom: 5px;
-	padding: 5px;
-	border-radius: 10px;
-	outline: none;
+	border-radius: 5px;
 	border: 2px solid #fcba00;
+  color: #444;
+	color: #66426d;
 	transition: margin-right .3s;
 	cursor: pointer;
 }
 .settings-game button:hover {
 	margin-right: 10px;
 }
+
+.settings-game button:focus {
+	outline: none;
+}
+
+
 .header-game {
 	width: 200px;
 	margin: auto;
@@ -64,23 +89,169 @@ body {
 .game-board {
 	padding-top: 50px;
 }
-.game-board > div {
+/* .game-board > div {
 	width: 100px;
 	margin: auto;
-}
+} */
 
 ol, ul {
   padding-left: 30px;
 }
 
+/* MUSIC */
+
 .wrap-music {
-  display: inline-block;
-  position: fixed;
-  right: 5px;
-  bottom: 5px;
+  width: 70px;
+	position: fixed;
+  left: -20px;
+	bottom: 50px;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap-music button {
+  display: block;
+  margin-bottom: 5px;
   border-radius: 5px;
-  border: 2px solid orange;
+  border: 2px solid #fcba00;
+  color: #444;
+	color: #66426d;
+  transition: margin-left .3s;
+  cursor: pointer;
+}
+
+.wrap-music button:hover {
+  margin-left: 10px;
+}
+
+.wrap-music button:focus {
+  outline: none;
+}
+
+.game-area {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-area > div {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	box-shadow: 4px 4px 4px #272727;
+	cursor: pointer;
+	transition: transform .3s;
+}
+
+.game-area > div:hover {
+	transform: rotate(10deg);
+}
+
+.game-area > div:last-child {
+	margin-right: 0;
+}
+
+.back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	background-color: #31cacb;
+}
+.back-hidden {
+	filter: opacity(0);
+	transition: filter .5s;
+}
+
+.item-1 {
+
+	background: url(../assets/img/unicorn-1.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-2 {
+
+	background: url(../assets/img/unicorn-2.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-3 {
+
+	background: url(../assets/img/unicorn-1.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-4 {
+
+	background: url(../assets/img/unicorn-2.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-5 {
+
+	background: url(../assets/img/unicorn-3.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-6 {
+
+	background: url(../assets/img/unicorn-3.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-7 {
+
+	background: url(../assets/img/unicorn-4.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-8 {
+
+	background: url(../assets/img/unicorn-4.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-9 {
+
+	background: url(../assets/img/unicorn-5.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-10 {
+
+	background: url(../assets/img/unicorn-5.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-11 {
+
+	background: url(../assets/img/unicorn-6.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-12 {
+
+	background: url(../assets/img/unicorn-6.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-13 {
+
+	background: url(../assets/img/unicorn-7.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.item-14 {
+
+	background: url(../assets/img/unicorn-7.jpg) no-repeat center center;
+	background-size: cover;
 }
 
 .board-row:after {
@@ -140,5 +311,100 @@ footer a {
   text-decoration: none;
 }
 
+.rsschool {
+  padding: 0 10px;
+  width: 70px;
+}
+.rsschool img {
+  max-width: 50px;
+}
+
+/* ***************** */
+/* MODAL */
+/* ***************** */
+
+.wrap-modal {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .7);
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.modal {
+	width: 80%;
+	margin: 20px auto;
+	height: 90vh;
+	border-radius: 20px;
+	box-shadow: 4px 4px 4px #000;
+	position: relative;
+	background: url(../assets/img/modal-about.jpg) no-repeat bottom right #FFF;
+	background-size: 25%;
+}
+
+.modal button {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	border: none;
+	background-color: transparent;
+	transition: color .2s;
+}
+
+.modal button span {
+	color: #66426d;
+	cursor: pointer;
+}
+
+.modal button span:hover {
+	color: #fcba00;
+}
+
+.modal button:focus {
+	outline: none;
+}
+
+.modal button span {
+	font-size: 40px;
+}
+
+.modal-content {
+	padding: 50px;
+	font-family: 'Shippori Mincho', serif;
+}
+
+.modal-content h2 {
+	color: #66426d;
+	text-align: center;
+}
+
+.modal-content p {
+	text-align: justify;
+	line-height: 1.7;
+}
+
+.modal-content strong {
+	color: #66426d;
+}
+
+.hot-keys {
+	list-style-type: none;
+	padding-left: 0;
+}
 /* <a href='https://ru.freepik.com/vectors/background'>Background вектор создан(а) rawpixel.com - ru.freepik.com</a> */
 /* <a href='https://ru.freepik.com/vectors/baby'>Baby вектор создан(а) babysofja - ru.freepik.com</a> */
+
+/* cards unicorns*/
+/* <a href='https://ru.freepik.com/vectors/cartoon'>Cartoon вектор создан(а) catalyststuff - ru.freepik.com</a> */
+/* <a href='https://ru.freepik.com/vectors/logo'>Logo вектор создан(а) catalyststuff - ru.freepik.com</a> */
+/* <a href='https://ru.freepik.com/vectors/nature'>Nature вектор создан(а) catalyststuff - ru.freepik.com</a> */
+/* <a href='https://ru.freepik.com/vectors/food'>Food вектор создан(а) catalyststuff - ru.freepik.com</a> */
+/* <a href='https://ru.freepik.com/vectors/nature'>Nature вектор создан(а) catalyststuff - ru.freepik.com</a> */
+/* <a href='https://ru.freepik.com/vectors/food'>Food вектор создан(а) catalyststuff - ru.freepik.com</a> */
+/* <a href='https://ru.freepik.com/vectors/baby'>Baby вектор создан(а) catalyststuff - ru.freepik.com</a> */
