@@ -143,14 +143,14 @@ ol, ul {
   outline: none;
 }
 
-.game-area {
+.game-area-lists {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 }
 
-.game-area > div {
+.game-area-lists > div {
 	position: relative;
 	width: 150px;
 	height: 150px;
@@ -162,11 +162,11 @@ ol, ul {
 	transition: transform .3s;
 }
 
-.game-area > div:hover {
+.game-area-lists > div:hover {
 	transform: rotate(10deg);
 }
 
-.game-area > div:last-child {
+.game-area-lists > div:last-child {
 	margin-right: 0;
 }
 

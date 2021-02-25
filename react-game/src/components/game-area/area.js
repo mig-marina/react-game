@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Score } from '../score/score.js';
 import { ListItems } from '../list-items/listItems.js';
 import { EndGame } from '../end-game/end.js';
+import GameItems from '../game-items/game-items.js';
 
 export class GameArea extends React.Component {
   constructor(props) {
@@ -15,15 +16,34 @@ export class GameArea extends React.Component {
    }
 
    this.items = 7;
+   // this.arrayItems = [4, 1, 7, 5, 3, 7, 2, 4, 6, 5, 2, 1, 6, 3];
    this.arrayItems = [];
    this.count = 0;
    this.up = 0;
    this.hiddenBack = this.hiddenBack.bind(this);
+   this.createItems = this.createItems.bind(this);
+  }
+
+  createItems() {
+    const leng = this.items * 2;
+    while (this.arrayItems.length < leng) {
+      let index = Math.floor(Math.random() * leng) + 1;
+      if(this.arrayItems.indexOf(index) == -1) {
+        this.arrayItems.push(index);
+      }
+    };
+    this.arrayItems = this.arrayItems.map((item) => {
+      if(item > this.items) {
+        item = item - this.items;
+      }
+      return item;
+    });
+    console.log(this.arrayItems);
   }
 
   hiddenBack(e) {
     const target = e.target;
-    const parentBlock = document.querySelector('.game-area');
+    const parentBlock = document.querySelector('.game-area-lists');
     const activeItem = document.querySelector('.back-hidden');
 
 
@@ -72,11 +92,14 @@ export class GameArea extends React.Component {
   }
 
 	render() {
+    this.createItems();
+
 		return (
       <div>
         <Score score={this.state.score} steps={this.state.steps} />
         <div className='game-area' onClick={this.hiddenBack}>
-
+          <GameItems count={this.items} items={this.arrayItems}/>
+          {/*
           <div className="item-1"><div className="back"></div></div>
           <div className="item-2"><div className="back"></div></div>
           <div className="item-3"><div className="back"></div></div>
@@ -91,8 +114,9 @@ export class GameArea extends React.Component {
           <div className="item-2"><div className="back"></div></div>
           <div className="item-3"><div className="back"></div></div>
           <div className="item-4"><div className="back"></div></div>
+          */}
         </div>
-        <EndGame steps={this.state.steps} score={this.state.score}/>
+        <EndGame steps={this.state.steps} score={this.state.score} />
       </div>
 		);
 	}
