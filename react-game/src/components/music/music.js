@@ -17,8 +17,8 @@ export class Music extends React.Component {
 			index: 0,
 		}
 
-		// this.url = item;
-		this.url = this.state.musicList[this.state.index];
+		this.url = item;
+		// this.url = this.state.musicList[this.state.index];
 		this.audio = new Audio(this.url);
 		this.audio.volume = 0.4;
 		this.more = this.more.bind(this);
@@ -35,19 +35,19 @@ export class Music extends React.Component {
     this.audio.pause();
   }
 
-	nextMusic = () => {
-		if(this.state.index !== 2) {
-			this.setState({
-				index: 1
-			});
-			this.url = this.state.musicList[this.state.index];
-			this.audio = new Audio(this.url);
-			this.audio.volume = 0.4;
-		} else this.setState({
-			index: 0
-		})
-		console.log(this.state.index);
-	}
+	// nextMusic = () => {
+	// 	if(this.state.index !== 2) {
+	// 		this.setState({
+	// 			index: 1
+	// 		});
+	// 		this.url = this.state.musicList[this.state.index];
+	// 		this.audio = new Audio(this.url);
+	// 		this.audio.volume = 0.4;
+	// 	} else this.setState({
+	// 		index: 0
+	// 	})
+	// 	console.log(this.state.index);
+	// }
 
   more = () => {
 	  if (this.audio.volume === 0.9) {
@@ -70,7 +70,6 @@ export class Music extends React.Component {
 
   return (
     <div className="wrap-music">
-			<button onClick={this.nextMusic}><ButtonIcon icon='&#249;' title='other music' /></button>
       <button onClick={this.play}><ButtonIcon icon='&#217;' title='play' /></button>
       <button onClick={this.pause}><ButtonIcon icon='&#220;' title='stop' /></button>
 	  	<button onClick={this.more}><ButtonIcon icon='&#193;' title='more sound' /></button>

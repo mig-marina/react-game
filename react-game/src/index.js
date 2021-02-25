@@ -13,6 +13,7 @@ import { GameArea } from './components/game-area/area.js';
 import { Modal } from './components/modal/modal.js';
 
 
+
 class Game extends React.Component {
 
   changeFon() {
@@ -34,6 +35,7 @@ class Game extends React.Component {
   		  <Footer />
   		  <ListSettings />
         <Modal />
+
       </div>
     );
   }

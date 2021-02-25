@@ -36,6 +36,20 @@ body {
 	padding: 20px;
 }
 
+.score {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 100px;
+}
+
+.score p {
+	margin: 0;
+	padding-bottom: 10px;
+	font-size: 20px;
+	color: #FFF;
+}
+
 .settings-game {
   width: 70px;
 	position: fixed;
@@ -165,6 +179,7 @@ ol, ul {
 	border-radius: 20px;
 	background-color: #31cacb;
 }
+
 .back-hidden {
 	filter: opacity(0);
 	transition: filter .5s;
@@ -184,35 +199,35 @@ ol, ul {
 
 .item-3 {
 
-	background: url(../assets/img/unicorn-1.jpg) no-repeat center center;
+	background: url(../assets/img/unicorn-3.jpg) no-repeat center center;
 	background-size: cover;
 }
 
 .item-4 {
 
-	background: url(../assets/img/unicorn-2.jpg) no-repeat center center;
+	background: url(../assets/img/unicorn-4.jpg) no-repeat center center;
 	background-size: cover;
 }
 
 .item-5 {
 
-	background: url(../assets/img/unicorn-3.jpg) no-repeat center center;
+	background: url(../assets/img/unicorn-5.jpg) no-repeat center center;
 	background-size: cover;
 }
 
 .item-6 {
 
-	background: url(../assets/img/unicorn-3.jpg) no-repeat center center;
+	background: url(../assets/img/unicorn-6.jpg) no-repeat center center;
 	background-size: cover;
 }
 
 .item-7 {
 
-	background: url(../assets/img/unicorn-4.jpg) no-repeat center center;
+	background: url(../assets/img/unicorn-7.jpg) no-repeat center center;
 	background-size: cover;
 }
 
-.item-8 {
+/* .item-8 {
 
 	background: url(../assets/img/unicorn-4.jpg) no-repeat center center;
 	background-size: cover;
@@ -252,6 +267,11 @@ ol, ul {
 
 	background: url(../assets/img/unicorn-7.jpg) no-repeat center center;
 	background-size: cover;
+} */
+
+.disable {
+  filter: opacity(.7);
+  pointer-events: none;
 }
 
 .board-row:after {
@@ -323,7 +343,8 @@ footer a {
 /* MODAL */
 /* ***************** */
 
-.wrap-modal {
+.wrap-modal,
+.wrap-end-modal {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -346,6 +367,11 @@ footer a {
 	position: relative;
 	background: url(../assets/img/modal-about.jpg) no-repeat bottom right #FFF;
 	background-size: 25%;
+}
+
+.wrap-end-modal .modal {
+	background: url(../assets/img/modal-end.jpg) no-repeat bottom center #FFF;
+	background-size: 30%;
 }
 
 .modal button {
@@ -396,6 +422,12 @@ footer a {
 .hot-keys {
 	list-style-type: none;
 	padding-left: 0;
+}
+
+p.end-steps,
+p.end-score,
+p.end-description {
+	text-align: center;
 }
 /* <a href='https://ru.freepik.com/vectors/background'>Background вектор создан(а) rawpixel.com - ru.freepik.com</a> */
 /* <a href='https://ru.freepik.com/vectors/baby'>Baby вектор создан(а) babysofja - ru.freepik.com</a> */
