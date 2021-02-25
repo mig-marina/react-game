@@ -33,14 +33,15 @@ body {
 }
 
 .wrap-game {
-	padding: 20px;
+	padding-top: 20px;
 }
 
 .score {
-	position: absolute;
+	/* position: absolute;
 	top: 20px;
 	left: 20px;
-	width: 100px;
+	width: 100px; */
+	margin-bottom: 20px;
 }
 
 .score p {
@@ -48,13 +49,15 @@ body {
 	padding-bottom: 10px;
 	font-size: 20px;
 	color: #FFF;
+	text-align: center;
 }
 
 .settings-game {
   width: 70px;
 	position: fixed;
 	right: -20px;
-	bottom: 50px;
+	/* bottom: 50px; */
+	top: 10px;
   padding: 5px;
   display: flex;
   flex-direction: column;
@@ -69,6 +72,7 @@ body {
 	color: #66426d;
 	transition: margin-right .3s;
 	cursor: pointer;
+	box-shadow: -4px 4px 4px #272727;
 }
 .settings-game button:hover {
 	margin-right: 10px;
@@ -82,6 +86,7 @@ body {
 .header-game {
 	width: 200px;
 	margin: auto;
+	margin-bottom: 20px;
 	padding: 10px;
 	border: 3px solid #FFF;
 	border-bottom: none;
@@ -101,11 +106,12 @@ body {
 }
 
 .game-board {
-	padding-top: 50px;
+	/* padding-top: 30px; */
 }
 /* .game-board > div {
-	width: 100px;
-	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 } */
 
 ol, ul {
@@ -118,7 +124,8 @@ ol, ul {
   width: 70px;
 	position: fixed;
   left: -20px;
-	bottom: 50px;
+	/* bottom: 50px; */
+	top: 10px;
   padding: 5px;
   display: flex;
   flex-direction: column;
@@ -133,6 +140,7 @@ ol, ul {
 	color: #66426d;
   transition: margin-left .3s;
   cursor: pointer;
+	box-shadow: 4px 4px 4px #272727;
 }
 
 .wrap-music button:hover {
@@ -152,8 +160,8 @@ ol, ul {
 
 .game-area-lists > div {
 	position: relative;
-	width: 150px;
-	height: 150px;
+	width: 120px;
+	height: 120px;
 	margin-right: 20px;
 	margin-bottom: 20px;
 	border-radius: 20px;
@@ -166,9 +174,9 @@ ol, ul {
 	transform: rotate(10deg);
 }
 
-.game-area-lists > div:last-child {
+/* .game-area-lists > div:last-child {
 	margin-right: 0;
-}
+} */
 
 .back {
 	position: absolute;
@@ -177,7 +185,9 @@ ol, ul {
 	width: 100%;
 	height: 100%;
 	border-radius: 20px;
-	background-color: #31cacb;
+	/* background-color: #31cacb; */
+	background: url(../assets/img/back-unicorn.jpg) no-repeat #FFF;
+	background-size: cover;
 }
 
 .back-hidden {
@@ -318,16 +328,27 @@ ol, ul {
 
 footer {
 	position: absolute;
+	/* position: fixed; */
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	text-align: center;
 	font-size: 20px;
 	color: #fcba00;
+	color: #66426d;
+	background: url(../assets/img/footer-fon.jpg) no-repeat, url(../assets/img/footer-fon-right.jpg) no-repeat top right #FFF;
+	background-size: 110px, 100px;
+	padding-top: 5px;
+	padding-bottom: 0;
+	box-shadow: 0 -4px 4px #272727;
+}
+
+footer p {
+	margin: 10px 0;
 }
 
 footer a {
-  color: #FFF;
+  color: #66426d;
   text-decoration: none;
 }
 
@@ -428,6 +449,31 @@ p.end-steps,
 p.end-score,
 p.end-description {
 	text-align: center;
+}
+
+@media screen and (max-width: 1100px) {
+	.game-area-lists > div {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media screen and (max-width: 1025px) {
+	#root {
+		/* height: 100%; */
+	}
+}
+
+@media screen and (max-width: 840px) {
+	#root {
+		/* height: 100%; */
+	}
+	footer {
+		position: static;
+		padding-bottom: 5px;
+		/* width: 100%; */
+	}
+
 }
 /* <a href='https://ru.freepik.com/vectors/background'>Background вектор создан(а) rawpixel.com - ru.freepik.com</a> */
 /* <a href='https://ru.freepik.com/vectors/baby'>Baby вектор создан(а) babysofja - ru.freepik.com</a> */

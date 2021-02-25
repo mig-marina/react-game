@@ -24,7 +24,7 @@ class Game extends React.Component {
     return (
   	  <div className="wrap-game">
   		  <Header />
-        <button onClick={this.changeFon}><ButtonIcon icon='&#0126;' title='other music' /></button>
+        {/*<button onClick={this.changeFon}><ButtonIcon icon='&#0126;' title='other music' /></button>*/}
         <div className="game-board">
             <GameArea />
         </div>
