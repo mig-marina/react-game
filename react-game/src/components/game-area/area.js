@@ -104,6 +104,7 @@ export class GameArea extends React.Component {
 
               const modal = document.querySelector('.wrap-end-modal');
               modal.classList.add('show');
+              modal.style.top = window.scrollY + 'px';
           		document.body.style.overflow = "hidden";
             }
           } else {
