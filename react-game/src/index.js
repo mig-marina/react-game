@@ -11,7 +11,7 @@ import { Footer } from './components/footer/footer.js';
 import { ListSettings } from './components/settings/button-settings.js';
 import { GameArea } from './components/game-area/area.js';
 import { Modal } from './components/modal/modal.js';
-
+import { Statistics } from './components/statistics/statistics.js';
 
 
 class Game extends React.Component {
@@ -27,6 +27,7 @@ class Game extends React.Component {
         {/*<button onClick={this.changeFon}><ButtonIcon icon='&#0126;' title='other music' /></button>*/}
         <div className="game-board">
             <GameArea />
+            
         </div>
         <div className="game-info">
           <div>{/* status */}</div>
@@ -35,7 +36,7 @@ class Game extends React.Component {
   		  <Footer />
   		  <ListSettings />
         <Modal />
-
+        <Statistics />
       </div>
     );
   }

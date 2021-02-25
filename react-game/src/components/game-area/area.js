@@ -13,6 +13,7 @@ export class GameArea extends React.Component {
      score: 0,
      steps: 0,
      isNew: false,
+     arrayForGame: [],
    }
 
    this.items = 7;
@@ -22,6 +23,37 @@ export class GameArea extends React.Component {
    this.up = 0;
    this.hiddenBack = this.hiddenBack.bind(this);
    this.createItems = this.createItems.bind(this);
+   this.startNewGame = this.startNewGame.bind(this);
+  }
+
+  startNewGame() {
+    // const mass = document.querySelectorAll('.game-area-lists .back-hidden');
+    // for(let i = 0; i < mass.length; i++) {
+    //   if(mass[i].classList.contains('back-hidden')) {
+    //     mass[i].classList.add('back');
+    //   }
+    // }
+    const mass = document.querySelectorAll('.game-area-lists > div');
+    for(let i = 0; i < mass.length; i++) {
+      if(mass[i].children.length === 0) {
+        const elem = document.createElement('div');
+        elem.classList.add('back');
+        mass[i].appendChild(elem);
+      }
+      if(mass[i].classList.contains('disable')) {
+        mass[i].classList.remove('disable');
+      }
+    }
+    this.arrayItems = [];
+    this.count = 0;
+    this.up = 0;
+    this.createItems();
+    console.log(this.arrayItems);
+    this.setState({
+      arrayForGame: this.arrayItems,
+      score: 0,
+      steps: 0
+    });
   }
 
   createItems() {
@@ -38,7 +70,9 @@ export class GameArea extends React.Component {
       }
       return item;
     });
-    console.log(this.arrayItems);
+
+
+    // return this.arrayItems;
   }
 
   hiddenBack(e) {
@@ -58,6 +92,8 @@ export class GameArea extends React.Component {
 
             activeItem.parentElement.removeChild(activeItem);
             target.parentElement.removeChild(target);
+            // activeItem.classList.remove('back');
+            // target.classList.remove('back');
             this.up = this.up + 1;
 
             this.setState({
@@ -65,7 +101,7 @@ export class GameArea extends React.Component {
             })
 
             if(this.up === 7) {
-              console.log('finish!!!');
+
               const modal = document.querySelector('.wrap-end-modal');
               modal.classList.add('show');
           		document.body.style.overflow = "hidden";
@@ -115,8 +151,10 @@ export class GameArea extends React.Component {
           <div className="item-3"><div className="back"></div></div>
           <div className="item-4"><div className="back"></div></div>
           */}
+
         </div>
         <EndGame steps={this.state.steps} score={this.state.score} />
+        <button className="start-new-game" onClick={this.startNewGame}>New Game</button>
       </div>
 		);
 	}

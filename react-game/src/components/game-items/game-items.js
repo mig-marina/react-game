@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const Back = (props) => {
+  return(
+    <div className="back"></div>
+  );
+}
 const GameItems = (props) => {
   let listItems = props.items;
+
   // let listItems = [];
   // const n = props.count;
   // const leng = n * 2;

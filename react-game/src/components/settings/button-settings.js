@@ -19,6 +19,7 @@ export class ListSettings extends React.Component {
 	 super(props);
 
 	 this.showModal = this.showModal.bind(this);
+	 this.showModalS = this.showModalS.bind(this);
  }
 
 	renderSettings(i) {
@@ -31,6 +32,13 @@ export class ListSettings extends React.Component {
 		document.body.style.overflow = "hidden";
 	}
 
+	showModalS() {
+		const modal = document.querySelector('.wrap-statistics-modal');
+		modal.classList.add('show');
+		document.body.style.overflow = "hidden";
+	}
+
+
   render() {
 	const sett='Settings Game';
 
@@ -40,7 +48,7 @@ export class ListSettings extends React.Component {
 			<button><ButtonIcon icon='&#094;' title='settings' /></button>
 			<button><ButtonIcon icon='&#0121;' title='sound' /></button>
 			<button><ButtonIcon icon='&#243;' title='autoplay' /></button>
-			<button><ButtonIcon icon='&#0113;' title='statistics' /></button>
+			<button onClick={this.showModalS}><ButtonIcon icon='&#0113;' title='statistics' /></button>
 		</div>
 	);
   }
