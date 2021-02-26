@@ -5,6 +5,7 @@ import { Score } from '../score/score.js';
 import { ListItems } from '../list-items/listItems.js';
 import { EndGame } from '../end-game/end.js';
 import GameItems from '../game-items/game-items.js';
+import { GameSettings } from '../game-settings/game-settings.js';
 
 export class GameArea extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export class GameArea extends React.Component {
      score: 0,
      steps: 0,
      isNew: false,
+     items: 7,
      arrayForGame: [],
    }
 
@@ -21,10 +23,30 @@ export class GameArea extends React.Component {
    this.arrayItems = [];
    this.count = 0;
    this.up = 0;
+   this.playSound = this.playSound.bind(this);
    this.hiddenBack = this.hiddenBack.bind(this);
    this.createItems = this.createItems.bind(this);
    this.startNewGame = this.startNewGame.bind(this);
+   this.updateData = this.updateData.bind(this);
   }
+
+  updateData (value) {
+    this.items = +value;
+   this.setState({ items: value });
+   console.log(this.state.items);
+   console.log(this.items);
+
+   this.createItems();
+   this.startNewGame();
+ }
+
+  playSound(sound) {
+     let audio = document.querySelector('audio');
+     audio.src = sound;
+     if (!audio) return;
+         audio.currentTime = 0;
+         audio.play();
+   }
 
   startNewGame() {
     // const mass = document.querySelectorAll('.game-area-lists .back-hidden');
@@ -85,7 +107,7 @@ export class GameArea extends React.Component {
       if(target.classList.contains('back')) {
 
         if(activeItem) {
-          console.log(activeItem.parentElement.classList.value);
+
           if(activeItem.parentElement.classList.value === target.parentElement.classList.value) {
             activeItem.parentElement.classList.add('disable');
             target.parentElement.classList.add('disable');
@@ -99,8 +121,8 @@ export class GameArea extends React.Component {
             this.setState({
               score: this.up
             })
-
-            if(this.up === 7) {
+            console.log(this.up, ' --- ', this.items);
+            if(this.up === this.items) {
 
               const modal = document.querySelector('.wrap-end-modal');
               modal.classList.add('show');
@@ -156,6 +178,8 @@ export class GameArea extends React.Component {
         </div>
         <EndGame steps={this.state.steps} score={this.state.score} />
         <button className="start-new-game" onClick={this.startNewGame}>New Game</button>
+
+        <GameSettings updateData={this.updateData} />
       </div>
 		);
 	}

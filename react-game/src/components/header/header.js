@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
-// HEADER
 const Logo = () => <h1>GAME</h1>;
 
 export class Header extends React.Component {

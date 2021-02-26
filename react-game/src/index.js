@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './css/normalize.css';
 import './css/index.css';
+import './css/template-dark.css';
 
 import { ButtonIcon } from './components/button-icon/button-icon.js';
 
@@ -27,21 +28,16 @@ class Game extends React.Component {
         {/*<button onClick={this.changeFon}><ButtonIcon icon='&#0126;' title='other music' /></button>*/}
         <div className="game-board">
             <GameArea />
-            
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
         </div>
   		  <Footer />
   		  <ListSettings />
         <Modal />
         <Statistics />
+
       </div>
     );
   }
 }
-
 
 // ========================================
 

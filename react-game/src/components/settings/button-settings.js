@@ -18,13 +18,19 @@ export class ListSettings extends React.Component {
 	constructor(props) {
 	 super(props);
 
+	 this.toggleMusic = this.toggleMusic.bind(this);
 	 this.showModal = this.showModal.bind(this);
 	 this.showModalS = this.showModalS.bind(this);
+	 this.setSettings = this.setSettings.bind(this);
  }
 
 	renderSettings(i) {
 		return <ItemSettings value = {i} />;
   }
+
+	toggleMusic() {
+
+	}
 
 	showModal(e) {
 		const modal = document.querySelector('.wrap-modal');
@@ -40,6 +46,12 @@ export class ListSettings extends React.Component {
 		document.body.style.overflow = "hidden";
 	}
 
+	setSettings() {
+		const modal = document.querySelector('.wrap-settings-modal');
+		modal.classList.add('show');
+		modal.style.top = window.scrollY + 'px';
+		document.body.style.overflow = "hidden";
+	}
 
   render() {
 	const sett='Settings Game';
@@ -47,8 +59,8 @@ export class ListSettings extends React.Component {
 	return(
 		<div className='settings-game'>
 			<button onClick={this.showModal}><ButtonIcon icon='&#0092;' title='rules' /></button>
-			<button><ButtonIcon icon='&#094;' title='settings' /></button>
-			<button><ButtonIcon icon='&#0121;' title='sound' /></button>
+			<button onClick={this.setSettings}><ButtonIcon icon='&#094;' title='settings' /></button>
+			<button onClick={this.toggleMusic}><ButtonIcon icon='&#0121;' title='sound' /></button>
 			<button><ButtonIcon icon='&#243;' title='autoplay' /></button>
 			<button onClick={this.showModalS}><ButtonIcon icon='&#0113;' title='statistics' /></button>
 		</div>
