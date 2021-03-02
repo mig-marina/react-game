@@ -2,6 +2,80 @@
 	background: url(../assets/img/dark-fon.jpg) no-repeat top center;
 	background-size: cover;
 }
+
 .dark #root {
-	background-color: rgba(0, 0, 0, .7);
+	background-color: rgba(0, 0, 0, .8);
+}
+
+.dark .header-game {
+	border-color: #000;
+	background-color: #000;
+}
+
+.dark .wrap-music button {
+  padding: 3px 0;
+	background-color: #000;
+	border: 1px solid #FFF;
+	box-shadow: none;
+	color: #FFF;
+}
+
+.dark .settings-game button {
+	border: 1px solid #FFF;
+	background-color: #000;
+	padding: 5px 0;
+  color: #FFF;
+	box-shadow: none;
+}
+
+
+.dark .start-new-game {
+	color: #fcba00;
+	background-color: #272727;
+	box-shadow: 4px 4px 4px #000;
+}
+
+.dark .start-new-game:hover {
+	color: #FFF;
+	box-shadow: 4px 4px 4px black;
+	background-color: #000;
+}
+
+.dark .start-new-game:active {
+	box-shadow: 1px 1px 1px #000;
+}
+
+.dark .game-area-lists > div {
+	box-shadow: 4px 4px 4px #000;
+}
+
+.dark .back {
+	background: url(../assets/img/dark-back-unicorn.jpg) no-repeat right bottom #334255;
+	background-size: 70%;
+}
+
+/* ***************** */
+/* FOOTER */
+/* ***************** */
+
+.dark footer {
+	color: #FFF;
+	background: #000;
+	box-shadow: none;
+}
+
+.dark footer a {
+  color: #FFF;
+}
+
+/* ***************** */
+/* MODAL */
+/* ***************** */
+
+.dark .modal button span {
+	color: #000;
+}
+
+.dark .modal button span:hover {
+	color: #294333;
 }

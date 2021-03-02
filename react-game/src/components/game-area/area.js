@@ -18,6 +18,7 @@ export class GameArea extends React.Component {
      arrayForGame: [],
    }
 
+   this.N_KEY = 78;
    this.items = 7;
    // this.arrayItems = [4, 1, 7, 5, 3, 7, 2, 4, 6, 5, 2, 1, 6, 3];
    this.arrayItems = [];
@@ -56,6 +57,7 @@ export class GameArea extends React.Component {
     //   }
     // }
     const mass = document.querySelectorAll('.game-area-lists > div');
+    console.log(mass);
     for(let i = 0; i < mass.length; i++) {
       if(mass[i].children.length === 0) {
         const elem = document.createElement('div');
@@ -64,6 +66,9 @@ export class GameArea extends React.Component {
       }
       if(mass[i].classList.contains('disable')) {
         mass[i].classList.remove('disable');
+      }
+      if(mass[i].children[0].classList.contains('back-hidden')) {
+        mass[i].children[0].classList.remove('back-hidden')
       }
     }
     this.arrayItems = [];
@@ -149,6 +154,38 @@ export class GameArea extends React.Component {
 
 
   }
+
+
+  _handleKeyDown = (event) => {
+			switch( event.keyCode ) {
+					case this.N_KEY:
+							this.startNewGame();
+							break;
+					// case this.S_KEY:
+					// 		this.closeAllModal();
+					// 		this.setSettings();
+					// 		break;
+					// case this.U_KEY:
+					// 		this.cartUnicorn();
+					// 		break;
+					default:
+							break;
+			}
+	}
+
+	// componentWillMount deprecated in React 16.3
+	componentDidMount(){
+			// BannerDataStore.addChangeListener(this._onchange);
+			// document.addEventListener("click", this._handleDocumentClick, false);
+			document.addEventListener("keydown", this._handleKeyDown);
+	}
+
+
+	componentWillUnmount() {
+			// BannerDataStore.removeChangeListener(this._onchange);
+			// document.removeEventListener("click", this._handleDocumentClick, false);
+			document.removeEventListener("keydown", this._handleKeyDown);
+	}
 
 	render() {
     this.createItems();

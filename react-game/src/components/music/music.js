@@ -35,20 +35,6 @@ export class Music extends React.Component {
     this.audio.pause();
   }
 
-	// nextMusic = () => {
-	// 	if(this.state.index !== 2) {
-	// 		this.setState({
-	// 			index: 1
-	// 		});
-	// 		this.url = this.state.musicList[this.state.index];
-	// 		this.audio = new Audio(this.url);
-	// 		this.audio.volume = 0.4;
-	// 	} else this.setState({
-	// 		index: 0
-	// 	})
-	// 	console.log(this.state.index);
-	// }
-
   more = () => {
 	  if (this.audio.volume === 0.9) {
 		console.log('max');

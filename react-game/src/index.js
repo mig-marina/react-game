@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './css/normalize.css';
 import './css/index.css';
 import './css/template-dark.css';
+import './css/template-blue.css';
 
 import { ButtonIcon } from './components/button-icon/button-icon.js';
 
@@ -17,17 +18,46 @@ import { Statistics } from './components/statistics/statistics.js';
 
 class Game extends React.Component {
 
-  changeFon() {
-    document.body.classList.toggle('black');
+  fullScreen() {
+    const element = document.querySelector('.game-board');
+    const item = document.querySelector('.fullscreen');
+
+
+      if(element.requestFullScreen) {
+        element.requestFullScreen();
+      } else if(element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if(element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen();
+      }
+      item.classList.add('full');
+      document.querySelector('.nofullscreen').classList.remove('full');
+  }
+
+  noFullScreen() {
+    const element = document.querySelector('.game-board');
+    const item = document.querySelector('.fullscreen');
+
+    if(document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if(document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if(document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    }
+
+    item.classList.remove('full');
+    document.querySelector('.nofullscreen').classList.add('full');
   }
 
   render() {
     return (
   	  <div className="wrap-game">
   		  <Header />
-        {/*<button onClick={this.changeFon}><ButtonIcon icon='&#0126;' title='other music' /></button>*/}
         <div className="game-board">
-            <GameArea />
+          <button className="fullscreen" onClick={this.fullScreen}><ButtonIcon icon='&#0062;' title='full screen' /></button>
+          <button className="nofullscreen full" onClick={this.noFullScreen}><ButtonIcon icon='&#0060;' title=' exit full screen' /></button>
+          <GameArea />
         </div>
   		  <Footer />
   		  <ListSettings />

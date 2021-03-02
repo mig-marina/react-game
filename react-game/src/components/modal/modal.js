@@ -25,12 +25,10 @@ export class Modal extends React.Component {
             <p>The set includes several paired cards with the same image. They are located on the surface with the image down. The cards must be turned over one by one. If the pictures match for the last two adjacent actions of the player, the player earns points, and the pictures themselves are excluded from the game. Otherwise, the pictures remain in their places, only they are hidden from the user again. And the player continues to look for pairs.</p>
             <p><strong>Hotkeys</strong></p>
             <ul className="hot-keys">
-              <li><strong>s</strong> - save</li>
-              <li><strong>n</strong> - new game</li>
-              <li><strong>m</strong> - change music</li>
-              <li><strong>b</strong> - change background</li>
               <li><strong>i</strong> - open game rules</li>
-              <li><strong>o</strong> - other</li>
+              <li><strong>u or a or c</strong> - change the cover of game cards (u - unicorn, a - animal, c - cat paws)</li>
+              <li><strong>s</strong> - open settings game</li>
+              <li><strong>n</strong> - new game</li>
             </ul>
           </div>
         </div>

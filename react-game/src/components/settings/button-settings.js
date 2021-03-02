@@ -18,6 +18,9 @@ export class ListSettings extends React.Component {
 	constructor(props) {
 	 super(props);
 
+	 this.I_KEY = 73;
+	 this.S_KEY = 83;
+
 	 this.toggleMusic = this.toggleMusic.bind(this);
 	 this.showModal = this.showModal.bind(this);
 	 this.showModalS = this.showModalS.bind(this);
@@ -51,6 +54,43 @@ export class ListSettings extends React.Component {
 		modal.classList.add('show');
 		modal.style.top = window.scrollY + 'px';
 		document.body.style.overflow = "hidden";
+	}
+
+	closeAllModal() {
+		const items = document.querySelectorAll('.show');
+		items.forEach((item) => item.classList.remove('show'));
+	}
+
+	_handleKeyDown = (event) => {
+			switch( event.keyCode ) {
+					case this.I_KEY:
+							this.closeAllModal();
+							this.showModal();
+							break;
+					case this.S_KEY:
+							this.closeAllModal();
+							this.setSettings();
+							break;
+					// case this.U_KEY:
+					// 		this.cartUnicorn();
+					// 		break;
+					default:
+							break;
+			}
+	}
+
+	// componentWillMount deprecated in React 16.3
+	componentDidMount(){
+			// BannerDataStore.addChangeListener(this._onchange);
+			// document.addEventListener("click", this._handleDocumentClick, false);
+			document.addEventListener("keydown", this._handleKeyDown);
+	}
+
+
+	componentWillUnmount() {
+			// BannerDataStore.removeChangeListener(this._onchange);
+			// document.removeEventListener("click", this._handleDocumentClick, false);
+			document.removeEventListener("keydown", this._handleKeyDown);
 	}
 
   render() {
