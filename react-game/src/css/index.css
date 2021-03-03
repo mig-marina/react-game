@@ -346,7 +346,7 @@ footer a {
 }
 
 .wrap-statistics-modal .modal {
-	background: url(../assets/img/modal-statistics.jpg) no-repeat bottom center #FFF;
+	background: url(../assets/img/modal-statistics.jpg) no-repeat bottom right #FFF;
 	background-size: 30%;
 }
 

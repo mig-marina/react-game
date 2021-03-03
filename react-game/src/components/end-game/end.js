@@ -48,8 +48,7 @@ export class EndGame extends React.Component {
           items.push(dataUser);
           localStorage.setItem('arrData', JSON.stringify(items));
       }
-      // console.log(JSON.parse(localStorage.getItem('arrData')));
-      console.log('items - ', items);
+      
     } else {
       this.arrUsersResults.push(dataUser);
       localStorage.setItem('arrData', JSON.stringify(this.arrUsersResults));

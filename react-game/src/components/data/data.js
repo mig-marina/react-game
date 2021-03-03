@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { ButtonIcon } from '../button-icon/button-icon.js';
 
-const Data = () => {
+const Data = (props) => {
   let items = JSON.parse(localStorage.getItem('arrData'));
 
   let listResult = items.map((item, i) =>

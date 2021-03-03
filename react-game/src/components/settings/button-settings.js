@@ -65,16 +65,22 @@ export class ListSettings extends React.Component {
 	handleKeyDown = (event) => {
 			switch( event.keyCode ) {
 					case this.I_KEY:
-							this.closeAllModal();
-							this.showModal();
+							if(!document.querySelector('.wrap-end-modal').classList.contains('show')) {
+								this.closeAllModal();
+								this.showModal();
+							}
 							break;
 					case this.S_KEY:
-							this.closeAllModal();
-							this.setSettings();
+							if(!document.querySelector('.wrap-end-modal').classList.contains('show')) {
+								this.closeAllModal();
+								this.setSettings();
+							}
 							break;
 					case this.R_KEY:
-							this.closeAllModal();
-							this.showModalS();
+							if(!document.querySelector('.wrap-end-modal').classList.contains('show')) {
+								this.closeAllModal();
+								this.showModalS();
+							}
 							break;
 					default:
 							break;

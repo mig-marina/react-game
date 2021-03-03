@@ -145,7 +145,9 @@ export class GameArea extends React.Component {
   handleKeyDown = (event) => {
 			switch( event.keyCode ) {
 					case this.N_KEY:
-							this.startNewGame();
+              if(!document.querySelector('.wrap-end-modal').classList.contains('show')) {
+                this.startNewGame();
+              }
 							break;
 					default:
 							break;

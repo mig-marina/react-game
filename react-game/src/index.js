@@ -20,8 +20,6 @@ import { Statistics } from './components/statistics/statistics.js';
 class Game extends React.Component {
   constructor(props) {
    super(props);
-
-   this.ESC_KEY = 27;
   }
 
   fullScreen() {
@@ -36,25 +34,6 @@ class Game extends React.Component {
       } else if(element.webkitRequestFullScreen) {
         element.webkitRequestFullScreen();
       }
-  }
-
-  handleKeyDown = (event) => {
-      switch( event.keyCode ) {
-          case this.ESC_KEY:
-              this.noFullScreen();
-              console.log('esc');
-              break;
-          default:
-              break;
-      }
-  }
-
-  componentDidMount(){
-      window.addEventListener("keydown", this.handleKeyDown);
-  }
-
-  componentWillUnmount() {
-      window.removeEventListener("keydown", this.handleKeyDown);
   }
 
   render() {

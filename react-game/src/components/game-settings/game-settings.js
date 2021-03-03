@@ -97,13 +97,19 @@ export class GameSettings extends React.Component {
     handleKeyDown = (event) => {
         switch( event.keyCode ) {
             case this.A_KEY:
-                this.cartAnimals();
+                if(!document.querySelector('.wrap-end-modal').classList.contains('show')) {
+                  this.cartAnimals();
+                }
                 break;
             case this.C_KEY:
-                this.cartCatPows();
+                if(!document.querySelector('.wrap-end-modal').classList.contains('show')) {
+                  this.cartCatPows();
+                }
                 break;
             case this.U_KEY:
-                this.cartUnicorn();
+                if(!document.querySelector('.wrap-end-modal').classList.contains('show')) {
+                  this.cartUnicorn();
+                }
                 break;
             default:
                 break;

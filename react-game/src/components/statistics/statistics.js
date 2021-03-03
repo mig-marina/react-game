@@ -8,8 +8,15 @@ export class Statistics extends React.Component {
 
   constructor(props) {
    super(props);
-
+   this.state = {
+     itemsResult: [],
+   }
     this.closeModal = this.closeModal.bind(this);
+    this.changeData = this.changeData.bind(this);
+  }
+
+  shouldComponentUpdate(nextprops, nextState) {
+    return true;
   }
 
   closeModal(e) {
@@ -18,7 +25,12 @@ export class Statistics extends React.Component {
       const modal = document.querySelector('.wrap-statistics-modal');
   		modal.classList.remove('show');
       document.body.style.overflow = "visible";
+      this.changeData();
     };
+  }
+
+  changeData() {
+    this.setState({ itemsResult: JSON.parse(localStorage.getItem('arrData')) });
   }
 
 	render() {
@@ -38,7 +50,7 @@ export class Statistics extends React.Component {
                 </tr>
               </thead>
 
-              <Data />
+              <Data list={this.state.itemsResult}/>
             </table>
             <p></p>
           </div>
