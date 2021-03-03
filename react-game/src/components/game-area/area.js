@@ -23,6 +23,7 @@ export class GameArea extends React.Component {
    this.arrayItems = [];
    this.count = 0;
    this.up = 0;
+
    this.playSound = this.playSound.bind(this);
    this.hiddenBack = this.hiddenBack.bind(this);
    this.createItems = this.createItems.bind(this);
@@ -120,6 +121,8 @@ export class GameArea extends React.Component {
               modal.classList.add('show');
               modal.style.top = window.scrollY + 'px';
           		document.body.style.overflow = "hidden";
+
+
             }
           } else {
               activeItem.classList.remove('back-hidden');

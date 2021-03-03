@@ -18,6 +18,11 @@ import { Statistics } from './components/statistics/statistics.js';
 
 
 class Game extends React.Component {
+  constructor(props) {
+   super(props);
+
+   this.ESC_KEY = 27;
+  }
 
   fullScreen() {
     const element = document.querySelector('.game-board');
@@ -31,24 +36,25 @@ class Game extends React.Component {
       } else if(element.webkitRequestFullScreen) {
         element.webkitRequestFullScreen();
       }
-      item.classList.add('full');
-      document.querySelector('.nofullscreen').classList.remove('full');
   }
 
-  noFullScreen() {
-    const element = document.querySelector('.game-board');
-    const item = document.querySelector('.fullscreen');
+  handleKeyDown = (event) => {
+      switch( event.keyCode ) {
+          case this.ESC_KEY:
+              this.noFullScreen();
+              console.log('esc');
+              break;
+          default:
+              break;
+      }
+  }
 
-    if(document.cancelFullScreen) {
-      document.cancelFullScreen();
-    } else if(document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if(document.webkitCancelFullScreen) {
-      document.webkitCancelFullScreen();
-    }
+  componentDidMount(){
+      window.addEventListener("keydown", this.handleKeyDown);
+  }
 
-    item.classList.remove('full');
-    document.querySelector('.nofullscreen').classList.add('full');
+  componentWillUnmount() {
+      window.removeEventListener("keydown", this.handleKeyDown);
   }
 
   render() {
@@ -57,7 +63,6 @@ class Game extends React.Component {
   		  <Header />
         <div className="game-board">
           <button className="fullscreen" onClick={this.fullScreen}><ButtonIcon icon='&#0062;' title='full screen' /></button>
-          <button className="nofullscreen full" onClick={this.noFullScreen}><ButtonIcon icon='&#0060;' title=' exit full screen' /></button>
           <GameArea />
         </div>
   		  <Footer />

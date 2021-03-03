@@ -2,9 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { ButtonIcon } from '../button-icon/button-icon.js';
-
+import Data from '../data/data.js';
 
 export class Statistics extends React.Component {
+
+  constructor(props) {
+   super(props);
+
+    this.closeModal = this.closeModal.bind(this);
+  }
 
   closeModal(e) {
     const target = e.target;
@@ -12,10 +18,11 @@ export class Statistics extends React.Component {
       const modal = document.querySelector('.wrap-statistics-modal');
   		modal.classList.remove('show');
       document.body.style.overflow = "visible";
-    }
+    };
   }
 
 	render() {
+
 		return (
       <div className='wrap-statistics-modal' onClick={this.closeModal}>
         <div className="modal">
@@ -30,24 +37,10 @@ export class Statistics extends React.Component {
                   <th>Steps</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>user 1</td>
-                  <td>25</td>
-                  <td>48</td>
-                </tr>
-                <tr>
-                  <td>user 2</td>
-                  <td>35</td>
-                  <td>49</td>
-                </tr>
-                <tr>
-                  <td>user 3</td>
-                  <td>135</td>
-                  <td>79</td>
-                </tr>
-              </tbody>
+
+              <Data />
             </table>
+            <p></p>
           </div>
         </div>
       </div>

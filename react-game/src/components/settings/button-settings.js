@@ -96,8 +96,8 @@ export class ListSettings extends React.Component {
 		<div className='settings-game'>
 			<button onClick={this.showModal}><ButtonIcon icon='&#0092;' title='rules' /></button>
 			<button onClick={this.setSettings}><ButtonIcon icon='&#094;' title='settings' /></button>
-			<button onClick={this.toggleMusic}><ButtonIcon icon='&#0121;' title='sound' /></button>
-			<button><ButtonIcon icon='&#243;' title='autoplay' /></button>
+			{/*<button onClick={this.toggleMusic}><ButtonIcon icon='&#0121;' title='sound' /></button>*/}
+			{/*<button><ButtonIcon icon='&#243;' title='autoplay' /></button>*/}
 			<button onClick={this.showModalS}><ButtonIcon icon='&#0113;' title='statistics' /></button>
 		</div>
 	);

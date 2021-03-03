@@ -451,6 +451,20 @@ p.end-steps,
 p.end-score,
 p.end-description {
 	text-align: center;
+	margin: 10px 0;
+}
+
+p.user-name {
+	text-align: center;
+}
+
+p.user-name input {
+	border: none;
+	border-bottom: 1px solid #66426d;
+}
+
+p.user-name input:focus {
+	outline: none;
 }
 
 table {
