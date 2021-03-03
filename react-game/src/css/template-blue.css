@@ -1,0 +1,36 @@
+.blue {
+	background-color: #91AFD1;
+}
+
+.blue #root {
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.blue .back {
+	background: url(../assets/img/fon.jpg) no-repeat right bottom #334255;
+	background-size: cover;
+}
+
+.blue .modal {
+	background: url(../assets/img/modal-about-blue.jpg) no-repeat bottom right #B3DEE4;
+	background-size: 25%;
+}
+
+.blue .wrap-end-modal .modal {
+	background: url(../assets/img/modal-end-blue.jpg) no-repeat bottom center #B3DEE4;
+	background-size: 30%;
+}
+
+.blue .wrap-statistics-modal .modal {
+	background: url(../assets/img/modal-statistics-blue.jpg) no-repeat bottom right #B3DEE4;
+	background-size: 30%;
+}
+
+.blue .wrap-settings-modal .modal {
+	background: url(../assets/img/modal-settings-blue.jpg) no-repeat 50px bottom #B3DEE4;
+	background-size: 20%;
+}
+
+.blue input {
+	background-color: #B3DEE4;
+}

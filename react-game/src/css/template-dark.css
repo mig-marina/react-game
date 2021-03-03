@@ -1,0 +1,116 @@
+.dark {
+	background: url(../assets/img/dark-fon.jpg) no-repeat top center;
+	background-size: cover;
+}
+
+.dark #root {
+	background-color: rgba(0, 0, 0, .8);
+}
+
+.dark .header-game {
+	border-color: #000;
+	background-color: #000;
+}
+
+.dark .wrap-music button {
+  padding: 3px 0;
+	background-color: #000;
+	border: 1px solid #FFF;
+	box-shadow: none;
+	color: #FFF;
+}
+
+.dark .settings-game button {
+	border: 1px solid #FFF;
+	background-color: #000;
+	padding: 5px 0;
+  color: #FFF;
+	box-shadow: none;
+}
+
+
+.dark .start-new-game {
+	color: #fcba00;
+	background-color: #272727;
+	box-shadow: 4px 4px 4px #000;
+}
+
+.dark .start-new-game:hover {
+	color: #FFF;
+	box-shadow: 4px 4px 4px black;
+	background-color: #000;
+}
+
+.dark .start-new-game:active {
+	box-shadow: 1px 1px 1px #000;
+}
+
+.dark .game-area-lists > div {
+	box-shadow: 4px 4px 4px #000;
+}
+
+.dark .back {
+	background: url(../assets/img/dark-back-unicorn.jpg) no-repeat right bottom #334255;
+	background-size: 70%;
+}
+
+.dark .modal {
+	background: url(../assets/img/modal-about-dark.jpg) no-repeat bottom right #334255;
+	background-size: 25%;
+	color: #FFF;
+}
+
+.dark .modal h2,
+.dark .modal strong {
+	color: #FBB115;
+}
+
+.dark .wrap-end-modal .modal {
+	background: url(../assets/img/modal-end-dark.jpg) no-repeat bottom center #334255;
+	background-size: 25%;
+}
+
+.dark .wrap-statistics-modal .modal {
+	background: url(../assets/img/modal-statistics-dark.jpg) no-repeat bottom right #334255;
+	background-size: 30%;
+}
+
+.dark .wrap-settings-modal .modal {
+	background: url(../assets/img/modal-settings-dark.jpg) no-repeat 50px bottom #334255;
+	background-size: 20%;
+}
+
+.dark tbody tr:nth-child(odd) {
+	color: #000;
+}
+
+.dark .wrap-end-modal .modal input {
+	background-color: #334255;
+	color: #FFF;
+	border-color: #FFF;
+}
+/* ***************** */
+/* FOOTER */
+/* ***************** */
+
+.dark footer {
+	color: #FFF;
+	background: #334255;
+	box-shadow: none;
+}
+
+.dark footer a {
+  color: #FFF;
+}
+
+/* ***************** */
+/* MODAL */
+/* ***************** */
+
+.dark .modal button span {
+	color: #000;
+}
+
+.dark .modal button span:hover {
+	color: #294333;
+}
