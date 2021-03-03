@@ -54,13 +54,46 @@
 	background-size: 70%;
 }
 
+.dark .modal {
+	background: url(../assets/img/modal-about-dark.jpg) no-repeat bottom right #334255;
+	background-size: 25%;
+	color: #FFF;
+}
+
+.dark .modal h2,
+.dark .modal strong {
+	color: #FBB115;
+}
+
+.dark .wrap-end-modal .modal {
+	background: url(../assets/img/modal-end-dark.jpg) no-repeat bottom center #334255;
+	background-size: 25%;
+}
+
+.dark .wrap-statistics-modal .modal {
+	background: url(../assets/img/modal-statistics-dark.jpg) no-repeat bottom right #334255;
+	background-size: 30%;
+}
+
+.dark .wrap-settings-modal .modal {
+	background: url(../assets/img/modal-settings-dark.jpg) no-repeat 50px bottom #334255;
+	background-size: 20%;
+}
+
+.dark tbody tr:nth-child(odd) {
+	color: #000;
+}
+
+.blue input {
+	background-color: #B3DEE4;
+}
 /* ***************** */
 /* FOOTER */
 /* ***************** */
 
 .dark footer {
 	color: #FFF;
-	background: #000;
+	background: #334255;
 	box-shadow: none;
 }
 
