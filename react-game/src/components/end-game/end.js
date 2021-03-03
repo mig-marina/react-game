@@ -48,7 +48,7 @@ export class EndGame extends React.Component {
           items.push(dataUser);
           localStorage.setItem('arrData', JSON.stringify(items));
       }
-      
+
     } else {
       this.arrUsersResults.push(dataUser);
       localStorage.setItem('arrData', JSON.stringify(this.arrUsersResults));
@@ -66,7 +66,10 @@ export class EndGame extends React.Component {
             <p className="end-steps">you took <strong>{this.props.steps}</strong> steps</p>
             <p className="end-score">scored <strong>{this.props.score}</strong> points</p>
             <p className="end-description">You can start a new game using <strong>the button in the main game window</strong> or <strong>the N key</strong></p>
-            <p className="user-name"><label>Enter your name: <input type="text" /></label></p>
+            <p className="user-name">
+              <label>Enter your name: <input type="text" /></label> and close the window
+              {/*<button className="ok" onClick={this.closeModal}><span>ok</span></button>*/}
+            </p>
           </div>
         </div>
       </div>

@@ -471,6 +471,35 @@ p.user-name input:focus {
 	outline: none;
 }
 
+button.ok {
+	margin-left: 10px;
+	/* display: inline-block; */
+
+	color: #000;
+	background-color: #FFF;
+	position: static;
+	border: 1px solid #000;
+	border-radius: 5px;
+	box-shadow: 4px 4px 4px #272727;
+	cursor: pointer;
+}
+
+button.ok span {
+	display: block;
+}
+
+.user-name button {
+	padding: 5px 10px;
+}
+
+button.ok:hover {
+	color: darkred;
+}
+
+button.ok:focus {
+	outline: none;
+}
+
 table {
 	margin: auto;
 }
