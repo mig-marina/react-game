@@ -222,6 +222,10 @@ ol, ul {
   outline: none;
 }
 
+.settings-game .of-sound {
+	display: none;
+}
+
 /* ***************** */
 /* GAME AREA */
 /* ***************** */

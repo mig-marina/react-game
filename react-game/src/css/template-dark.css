@@ -84,8 +84,10 @@
 	color: #000;
 }
 
-.blue input {
-	background-color: #B3DEE4;
+.dark .wrap-end-modal .modal input {
+	background-color: #334255;
+	color: #FFF;
+	border-color: #FFF;
 }
 /* ***************** */
 /* FOOTER */

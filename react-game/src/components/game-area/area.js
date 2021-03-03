@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import sound from '../../assets/sound/sound.mp3';
+
 import { Score } from '../score/score.js';
 import { ListItems } from '../list-items/listItems.js';
 import { EndGame } from '../end-game/end.js';
@@ -19,10 +21,16 @@ export class GameArea extends React.Component {
    }
 
    this.N_KEY = 78;
+   this.MORESOUND_KEY = 187;
+   this.LITLESOUND_KEY = 189;
    this.items = 7;
    this.arrayItems = [];
    this.count = 0;
    this.up = 0;
+
+   this.url = sound;
+   this.audio = new Audio(this.url);
+   this.audio.volume = 0.1;
 
    this.playSound = this.playSound.bind(this);
    this.hiddenBack = this.hiddenBack.bind(this);
@@ -39,11 +47,13 @@ export class GameArea extends React.Component {
  }
 
   playSound(sound) {
-     let audio = document.querySelector('audio');
-     audio.src = sound;
-     if (!audio) return;
-         audio.currentTime = 0;
-         audio.play();
+     // let audio = document.querySelector('audio');
+     // audio.src = sound;
+     // audio.volume = 0.1;
+     // if (!audio) return;
+     //     audio.currentTime = 0;
+     //     audio.play();
+     this.audio.play();
    }
 
   startNewGame() {
@@ -101,14 +111,19 @@ export class GameArea extends React.Component {
     while(target !== parentBlock) {
       if(target.classList.contains('back')) {
 
+      if(!document.querySelector('.on').classList.contains('of-sound')) { this.playSound(sound)}
+
         if(activeItem) {
 
-          if(activeItem.parentElement.classList.value === target.parentElement.classList.value) {
+          if(activeItem.parentElement.classList.value === target.parentElement.classList.value && activeItem !== target) {
             activeItem.parentElement.classList.add('disable');
             target.parentElement.classList.add('disable');
 
+
             activeItem.parentElement.removeChild(activeItem);
             target.parentElement.removeChild(target);
+
+
 
             this.up = this.up + 1;
 
@@ -149,6 +164,26 @@ export class GameArea extends React.Component {
                 this.startNewGame();
               }
 							break;
+          case this.MORESOUND_KEY:
+              if(!document.querySelector('.wrap-end-modal').classList.contains('show')) {
+                console.log('more');
+                if (this.audio.volume === 0.9) {
+            		}
+            		if (this.audio.volume < 0.9) {
+            			this.audio.volume = this.audio.volume + 0.1
+            		}
+              }
+    					break;
+          case this.LITLESOUND_KEY:
+              if(!document.querySelector('.wrap-end-modal').classList.contains('show')) {
+
+                if (this.audio.volume > 0.1) {
+            			this.audio.volume = this.audio.volume - 0.1
+            		}
+            		if (this.audio.volume === 0) {
+            		}
+              }
+        			break;
 					default:
 							break;
 			}
@@ -178,6 +213,8 @@ export class GameArea extends React.Component {
         <button className="start-new-game" onClick={this.startNewGame}>New Game</button>
 
         <GameSettings updateData={this.updateData} />
+
+        <audio src=""></audio>
       </div>
 		);
 	}

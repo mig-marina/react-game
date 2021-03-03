@@ -22,7 +22,8 @@ export class ListSettings extends React.Component {
 	 this.S_KEY = 83;
 	 this.R_KEY = 82;
 
-	 this.toggleMusic = this.toggleMusic.bind(this);
+	 this.ofMusic = this.ofMusic.bind(this);
+	 this.onMusic = this.onMusic.bind(this);
 	 this.showModal = this.showModal.bind(this);
 	 this.showModalS = this.showModalS.bind(this);
 	 this.setSettings = this.setSettings.bind(this);
@@ -32,8 +33,14 @@ export class ListSettings extends React.Component {
 		return <ItemSettings value = {i} />;
   }
 
-	toggleMusic() {
+	ofMusic() {
+		document.querySelector('.on').classList.add('of-sound');
+		document.querySelector('.of').classList.remove('of-sound');
+	}
 
+	onMusic() {
+		document.querySelector('.on').classList.remove('of-sound');
+		document.querySelector('.of').classList.add('of-sound');
 	}
 
 	showModal(e) {
@@ -102,7 +109,8 @@ export class ListSettings extends React.Component {
 		<div className='settings-game'>
 			<button onClick={this.showModal}><ButtonIcon icon='&#0092;' title='rules' /></button>
 			<button onClick={this.setSettings}><ButtonIcon icon='&#094;' title='settings' /></button>
-			{/*<button onClick={this.toggleMusic}><ButtonIcon icon='&#0121;' title='sound' /></button>*/}
+			<button className="sound on" onClick={this.ofMusic}><ButtonIcon icon='&#0122;' title='sound' /></button>
+			<button className="sound of of-sound" onClick={this.onMusic}><ButtonIcon icon='&#0120;' title='sound' /></button>
 			{/*<button><ButtonIcon icon='&#243;' title='autoplay' /></button>*/}
 			<button onClick={this.showModalS}><ButtonIcon icon='&#0113;' title='statistics' /></button>
 		</div>
