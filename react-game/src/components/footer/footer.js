@@ -7,6 +7,7 @@ import { Music } from '../music/music.js';
 import { ButtonIcon } from '../button-icon/button-icon.js';
 
 export class Footer extends React.Component {
+	
 	render() {
 		const author = 'mig-marina';
     const url = "https://github.com/mig-marina";

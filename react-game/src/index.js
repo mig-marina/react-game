@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './css/normalize.css';
 import './css/index.css';
+import './css/cards-cover.css';
 import './css/template-dark.css';
 import './css/template-blue.css';
 

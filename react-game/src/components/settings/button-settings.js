@@ -20,6 +20,7 @@ export class ListSettings extends React.Component {
 
 	 this.I_KEY = 73;
 	 this.S_KEY = 83;
+	 this.R_KEY = 82;
 
 	 this.toggleMusic = this.toggleMusic.bind(this);
 	 this.showModal = this.showModal.bind(this);
@@ -61,7 +62,7 @@ export class ListSettings extends React.Component {
 		items.forEach((item) => item.classList.remove('show'));
 	}
 
-	_handleKeyDown = (event) => {
+	handleKeyDown = (event) => {
 			switch( event.keyCode ) {
 					case this.I_KEY:
 							this.closeAllModal();
@@ -71,26 +72,21 @@ export class ListSettings extends React.Component {
 							this.closeAllModal();
 							this.setSettings();
 							break;
-					// case this.U_KEY:
-					// 		this.cartUnicorn();
-					// 		break;
+					case this.R_KEY:
+							this.closeAllModal();
+							this.showModalS();
+							break;
 					default:
 							break;
 			}
 	}
 
-	// componentWillMount deprecated in React 16.3
 	componentDidMount(){
-			// BannerDataStore.addChangeListener(this._onchange);
-			// document.addEventListener("click", this._handleDocumentClick, false);
-			document.addEventListener("keydown", this._handleKeyDown);
+			document.addEventListener("keydown", this.handleKeyDown);
 	}
 
-
 	componentWillUnmount() {
-			// BannerDataStore.removeChangeListener(this._onchange);
-			// document.removeEventListener("click", this._handleDocumentClick, false);
-			document.removeEventListener("keydown", this._handleKeyDown);
+			document.removeEventListener("keydown", this.handleKeyDown);
 	}
 
   render() {

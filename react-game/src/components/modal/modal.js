@@ -26,9 +26,10 @@ export class Modal extends React.Component {
             <p><strong>Hotkeys</strong></p>
             <ul className="hot-keys">
               <li><strong>i</strong> - open game rules</li>
-              <li><strong>u or a or c</strong> - change the cover of game cards (u - unicorn, a - animal, c - cat paws)</li>
+              <li><strong>u</strong> or <strong>a</strong> or <strong>c</strong> - change the cover of game cards (u - unicorn, a - animal, c - cat paws)</li>
               <li><strong>s</strong> - open settings game</li>
               <li><strong>n</strong> - new game</li>
+              <li><strong>r</strong> - open the result of the last 10 games</li>
             </ul>
           </div>
         </div>

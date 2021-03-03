@@ -1,3 +1,7 @@
+/* ***************** */
+/* FONTS */
+/* ***************** */
+
 @import url('https://fonts.googleapis.com/css2?family=Risque&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
 
@@ -12,10 +16,18 @@
 		font-style: normal;
 }
 
+/* ***************** */
+/* BASIC */
+/* ***************** */
+
 body {
   font-family: 'Risque', cursive;
   font-size: 20px;
   background-color: #66426d;
+}
+
+ol, ul {
+  padding-left: 30px;
 }
 
 .black {
@@ -26,11 +38,37 @@ body {
 	height: 100vh;
 	min-height: 650px;
 	position: relative;
-	/* padding-bottom: 90px; */
 }
 
 .icon {
   font-family: WebSymbolsRegular;
+}
+
+.header-game {
+	width: 200px;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 3px solid #FFF;
+	border-bottom: none;
+	border-right: none;
+	border-radius: 20px;
+}
+
+.header-game h1{
+	margin: 0;
+	padding-top: 76px;
+	padding-left: 96px;
+	background: url(../assets/img/logo.jpg) no-repeat left top;
+	background-size: 100px;
+	font-size: 24px;
+	letter-spacing: 3px;
+	color: #fcba00;
+}
+
+.game-board {
+	padding: 0 70px;
+	padding-top: 10px;
 }
 
 .start-new-game {
@@ -77,11 +115,14 @@ body {
 	text-align: center;
 }
 
+/* ***************** */
+/* BUTTON SETTINGS */
+/* ***************** */
+
 .settings-game {
   width: 70px;
 	position: fixed;
 	right: -20px;
-	/* bottom: 50px; */
 	top: 10px;
   padding: 5px;
   display: flex;
@@ -99,6 +140,7 @@ body {
 	cursor: pointer;
 	box-shadow: -4px 4px 4px #272727;
 }
+
 .settings-game button:hover {
 	margin-right: 10px;
 }
@@ -107,34 +149,9 @@ body {
 	outline: none;
 }
 
-
-.header-game {
-	width: 200px;
-	margin: auto;
-	margin-bottom: 20px;
-	padding: 10px;
-	border: 3px solid #FFF;
-	border-bottom: none;
-	border-right: none;
-	border-radius: 20px;
-}
-
-.header-game h1{
-	margin: 0;
-	padding-top: 76px;
-	padding-left: 96px;
-	background: url(../assets/img/logo.jpg) no-repeat left top;
-	background-size: 100px;
-	font-size: 24px;
-	letter-spacing: 3px;
-	color: #fcba00;
-}
-
-.game-board {
-	padding: 0 70px;
-	padding-top: 10px;
-	/* position: relative; */
-}
+/* ***************** */
+/* FULL SCREEN */
+/* ***************** */
 
 .fullscreen,
 .nofullscreen {
@@ -162,30 +179,23 @@ body {
 :-webkit-full-screen {
   padding-top: 150px;
 }
+
 :-moz-full-screen {
   padding-top: 150px;
 }
+
 .full {
 	display: none;
 }
 
-/* .game-board > div {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-} */
-
-ol, ul {
-  padding-left: 30px;
-}
-
-/* MUSIC */
+/* ***************** */
+/* BUTTONS MUSIC */
+/* ***************** */
 
 .wrap-music {
   width: 70px;
 	position: fixed;
   left: -20px;
-	/* bottom: 50px; */
 	top: 10px;
   padding: 5px;
   display: flex;
@@ -212,6 +222,10 @@ ol, ul {
   outline: none;
 }
 
+/* ***************** */
+/* GAME AREA */
+/* ***************** */
+
 .game-area-lists {
 	display: flex;
 	flex-wrap: wrap;
@@ -235,10 +249,6 @@ ol, ul {
 	transform: rotate(10deg);
 }
 
-/* .game-area-lists > div:last-child {
-	margin-right: 0;
-} */
-
 .back {
 	position: absolute;
 	top: 0;
@@ -246,7 +256,6 @@ ol, ul {
 	width: 100%;
 	height: 100%;
 	border-radius: 20px;
-	/* background-color: #31cacb; */
 	background: url(../assets/img/back-unicorn.jpg) no-repeat #FFF;
 	background-size: cover;
 }
@@ -256,280 +265,10 @@ ol, ul {
 	transition: filter .5s;
 }
 
-.item-1 {
-
-	background: url(../assets/img/unicorn-1.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-2 {
-
-	background: url(../assets/img/unicorn-2.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-3 {
-
-	background: url(../assets/img/unicorn-3.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-4 {
-
-	background: url(../assets/img/unicorn-4.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-5 {
-
-	background: url(../assets/img/unicorn-5.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-6 {
-
-	background: url(../assets/img/unicorn-6.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-7 {
-
-	background: url(../assets/img/unicorn-7.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-8 {
-
-	background: url(../assets/img/unicorn-8.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-9 {
-
-	background: url(../assets/img/unicorn-9.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-10 {
-
-	background: url(../assets/img/unicorn-10.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-11 {
-
-	background: url(../assets/img/unicorn-11.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-12 {
-
-	background: url(../assets/img/unicorn-12.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.item-13 {
-
-	background: url(../assets/img/unicorn-13.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-
-.animal .item-1 {
-
-	background: url(../assets/img/animal-1.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-2 {
-
-	background: url(../assets/img/animal-2.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-3 {
-
-	background: url(../assets/img/animal-3.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-4 {
-
-	background: url(../assets/img/animal-4.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-5 {
-
-	background: url(../assets/img/animal-5.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-6 {
-
-	background: url(../assets/img/animal-6.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-7 {
-
-	background: url(../assets/img/animal-7.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-8 {
-
-	background: url(../assets/img/animal-8.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-9 {
-
-	background: url(../assets/img/animal-9.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-10 {
-
-	background: url(../assets/img/animal-10.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-11 {
-
-	background: url(../assets/img/animal-11.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.animal .item-12 {
-
-	background: url(../assets/img/animal-12.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-/* .item-13 {
-
-	background: url(../assets/img/unicorn-13.jpg) no-repeat center center;
-	background-size: cover;
-} */
-
-
-
-.cat .item-1 {
-
-	background: url(../assets/img/cat-1.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-2 {
-
-	background: url(../assets/img/cat-2.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-3 {
-
-	background: url(../assets/img/cat-3.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-4 {
-
-	background: url(../assets/img/cat-4.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-5 {
-
-	background: url(../assets/img/cat-5.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-6 {
-
-	background: url(../assets/img/cat-6.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-7 {
-
-	background: url(../assets/img/cat-7.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-8 {
-
-	background: url(../assets/img/cat-8.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-9 {
-
-	background: url(../assets/img/cat-9.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-10 {
-
-	background: url(../assets/img/cat-10.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-11 {
-
-	background: url(../assets/img/cat-11.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-.cat .item-12 {
-
-	background: url(../assets/img/cat-12.jpg) no-repeat center center;
-	background-size: cover;
-}
-
-
 .disable {
   filter: opacity(.7);
   pointer-events: none;
 }
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.square:focus {
-  outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
-}
-
-/* .game { */
-  /* display: flex; */
-  /* flex-direction: row; */
-/* } */
 
 /* ***************** */
 /* FOOTER */
@@ -662,7 +401,6 @@ footer a {
 	line-height: 1.7;
 }
 
-
 .modal-content strong {
 	color: #66426d;
 }
@@ -692,7 +430,6 @@ footer a {
 	padding: 10px 15px;
 	margin-right: 20px;
 	border-radius: 10px;
-	/* border: 1px solid #272727; */
 	background-color: #66426d;
 	color: #FFF;
 	cursor: pointer;
@@ -719,9 +456,11 @@ p.end-description {
 table {
 	margin: auto;
 }
+
 tbody tr:nth-child(odd) {
 	background-color: #DDD;
 }
+
 table td {
 	width: 100px;
 	padding: 5px;
@@ -734,16 +473,17 @@ table tr td:last-child {
 	border-right: none;
 }
 
+/* ***************** */
+/* MEDIA */
+/* ***************** */
+
 @media screen and (max-width: 1150px) {
 	.game-area-lists > div {
-		/* width: 80px;
-		height: 80px; */
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	#root {
-		/* height: 100%; */
 		height: auto;
 		min-height: 90vh;
 		padding-bottom: 100px;
@@ -767,11 +507,8 @@ table tr td:last-child {
 	}
 
 	footer {
-		/* position: static; */
 		padding-bottom: 5px;
-		/* width: 100%; */
 	}
-
 }
 
 @media screen and (max-width: 650px) {
@@ -805,6 +542,11 @@ table tr td:last-child {
 		line-height: 1.3;
 	}
 }
+
+/* ***************** */
+/* copyright for graphics */
+/* ***************** */
+
 /* <a href='https://ru.freepik.com/vectors/background'>Background вектор создан(а) rawpixel.com - ru.freepik.com</a> */
 /* <a href='https://ru.freepik.com/vectors/baby'>Baby вектор создан(а) babysofja - ru.freepik.com</a> */
 

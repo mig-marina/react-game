@@ -76,14 +76,12 @@ export class GameSettings extends React.Component {
 
   setData() {
     const items = document.querySelectorAll('.settings-size input');
-    // let v = items.filter((item) => item.checked);
     let v;
     for(let i = 0; i < items.length; i++) {
       if(items[i].checked) {
         v = items[i];
       }
     }
-    // console.log(v.value);
     return this.props.updateData(v.value);
   }
 
@@ -96,9 +94,7 @@ export class GameSettings extends React.Component {
     }
   }
 
-
-
-    _handleKeyDown = (event) => {
+    handleKeyDown = (event) => {
         switch( event.keyCode ) {
             case this.A_KEY:
                 this.cartAnimals();
@@ -114,18 +110,12 @@ export class GameSettings extends React.Component {
         }
     }
 
-    // componentWillMount deprecated in React 16.3
     componentDidMount(){
-        // BannerDataStore.addChangeListener(this._onchange);
-        // document.addEventListener("click", this._handleDocumentClick, false);
-        document.addEventListener("keydown", this._handleKeyDown);
+        document.addEventListener("keydown", this.handleKeyDown);
     }
 
-
     componentWillUnmount() {
-        // BannerDataStore.removeChangeListener(this._onchange);
-        // document.removeEventListener("click", this._handleDocumentClick, false);
-        document.removeEventListener("keydown", this._handleKeyDown);
+        document.removeEventListener("keydown", this.handleKeyDown);
     }
 
 	render() {

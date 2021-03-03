@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import item from '../../assets/sound/music.mp3';
-import item2 from '../../assets/sound/music-2.mp3';
-import item3 from '../../assets/sound/music-3.mp3';
 
 import { ButtonIcon } from '../button-icon/button-icon.js';
 
@@ -13,12 +11,10 @@ export class Music extends React.Component {
 		this.state = {
 		  play: false,
 		  pause: true,
-		  musicList: [item, item2, item3],
 			index: 0,
 		}
 
 		this.url = item;
-		// this.url = this.state.musicList[this.state.index];
 		this.audio = new Audio(this.url);
 		this.audio.volume = 0.4;
 		this.more = this.more.bind(this);
@@ -37,19 +33,18 @@ export class Music extends React.Component {
 
   more = () => {
 	  if (this.audio.volume === 0.9) {
-		console.log('max');
-	}
-	if (this.audio.volume < 0.9) {
-		this.audio.volume = this.audio.volume + 0.1
-	}
-	  }
+		}
+		if (this.audio.volume < 0.9) {
+			this.audio.volume = this.audio.volume + 0.1
+		}
+	 }
+
   litle = () => {
-	if (this.audio.volume > 0) {
-		this.audio.volume = this.audio.volume - 0.1
-	}
-	  if (this.audio.volume === 0) {
-		console.log('zero');
-	}
+		if (this.audio.volume > 0) {
+			this.audio.volume = this.audio.volume - 0.1
+		}
+		if (this.audio.volume === 0) {
+		}
 	}
 
   render() {
@@ -63,5 +58,4 @@ export class Music extends React.Component {
     </div>
     );
   }
-
 }
